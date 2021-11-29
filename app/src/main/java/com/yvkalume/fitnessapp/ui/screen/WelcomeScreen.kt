@@ -23,6 +23,8 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.yvkalume.fitnessapp.R
 import com.yvkalume.fitnessapp.ui.theme.Black700
 import com.yvkalume.fitnessapp.ui.theme.Blue700
@@ -32,9 +34,8 @@ import compose.icons.FontAwesomeIcons
 import compose.icons.fontawesomeicons.Brands
 import compose.icons.fontawesomeicons.brands.Google
 
-@Preview
 @Composable
-fun WelcomeScreen() {
+fun WelcomeScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -145,4 +146,10 @@ fun SignUpCta() {
             }
         }
     )
+}
+
+@Preview
+@Composable
+fun WelcomeScreenPreview() {
+    WelcomeScreen(navController = rememberNavController())
 }
