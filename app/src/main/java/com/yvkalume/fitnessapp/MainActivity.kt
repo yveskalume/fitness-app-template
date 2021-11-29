@@ -8,6 +8,10 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.yvkalume.fitnessapp.ui.screen.HomeScreen
 import com.yvkalume.fitnessapp.ui.screen.WelcomeScreen
 import com.yvkalume.fitnessapp.ui.theme.FitnessappTheme
 
@@ -18,7 +22,15 @@ class MainActivity : ComponentActivity() {
             FitnessappTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    WelcomeScreen()
+                    val navController = rememberNavController()
+                    NavHost(navController = navController, startDestination = "welcome") {
+                        composable(route = "welcome") {
+                            WelcomeScreen(navController)
+                        }
+                        composable(route = "home") {
+                            HomeScreen(navController)
+                        }
+                    }
                 }
             }
         }

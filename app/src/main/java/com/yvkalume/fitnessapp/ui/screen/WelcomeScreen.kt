@@ -75,6 +75,7 @@ fun WelcomeScreen(navController: NavController) {
         )
 
         LoginButton(
+            onClick = { navController.navigate("home") },
             borderStroke = BorderStroke(1.dp, color = White),
             backgroundColor = Black700, modifier = Modifier
                 .fillMaxWidth()
@@ -86,6 +87,7 @@ fun WelcomeScreen(navController: NavController) {
         }
 
         LoginButton(
+            onClick = { navController.navigate("home") },
             backgroundColor = Blue700,
             modifier = Modifier
                 .fillMaxWidth()
@@ -105,11 +107,12 @@ fun LoginButton(
     modifier: Modifier = Modifier,
     borderStroke: BorderStroke? = null,
     backgroundColor: Color,
+    onClick: () -> Unit,
     content: @Composable () -> Unit
 ) {
     OutlinedButton(
         border = borderStroke,
-        onClick = { /*TODO*/ },
+        onClick = { onClick() },
         modifier = modifier,
         shape = RoundedCornerShape(16.dp),
         contentPadding = PaddingValues(8.dp),
