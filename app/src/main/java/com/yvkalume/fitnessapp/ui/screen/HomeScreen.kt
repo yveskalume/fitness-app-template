@@ -44,7 +44,7 @@ fun HomeScreen(navController: NavController) {
 
         item {
             LazyRow(
-                contentPadding = PaddingValues(24.dp),
+                contentPadding = PaddingValues(horizontal = 24.dp, vertical = 8.dp),
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 content = {
                     items(10) {
@@ -67,7 +67,7 @@ fun HomeScreen(navController: NavController) {
 
         item {
             LazyRow(
-                contentPadding = PaddingValues(24.dp),
+                contentPadding = PaddingValues(horizontal = 24.dp, vertical = 8.dp),
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 content = {
                     items(10) {
@@ -146,7 +146,7 @@ fun TextHeaderItem(text: String) {
     Text(
         text = text, fontSize = 16.sp, color = White, modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 24.dp, vertical = 8.dp)
+            .padding(top = 16.dp, start = 24.dp, end = 24.dp, bottom = 8.dp)
     )
 }
 
