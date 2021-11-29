@@ -46,12 +46,7 @@ fun WelcomeScreen(navController: NavController) {
         Surface(
             modifier = Modifier
                 .size(300.dp),
-            shape = RoundedCornerShape(
-                topStart = 24.dp,
-                topEnd = 40.dp,
-                bottomEnd = 24.dp,
-                bottomStart = 40.dp
-            )
+            shape = RoundedCornerShape(40.dp)
         ) {
             Image(
                 painter = painterResource(id = R.drawable.fitness_welcome_img),
